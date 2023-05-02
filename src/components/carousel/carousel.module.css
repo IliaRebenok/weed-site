@@ -22,7 +22,8 @@
     overflow: hidden;
     background-color: #111;
     opacity: 0;
-    transition: 300ms opacity ease-in-out;
+    transition: 100ms opacity ease-in-out;
+
 }
 
 .imageTwo {
@@ -74,15 +75,23 @@
         position: relative;
         width: 100%;
         height: 300px;
+        padding: 1rem 1rem;
     }
 
     .image {
-        width: 48%;
+        width: 45%;
+        margin: 0 auto;
         max-width: 400px;
     }
 
+    .imageWrap {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 1rem;
+    }
+
     .imageTwo {
-        left: 52%;
+        left: 50%;
     }
 
     .buttonWrap {

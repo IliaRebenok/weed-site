@@ -58,79 +58,12 @@
     }
   </script>
 
-  <style>
-    body {
-      background-color: #1F2937;
-    }
-    .loading {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 4px;
-      background: linear-gradient(0deg, rgb(0, 182, 3) 0%, rgba(2, 180, 48, 1) 46%, rgb(2, 183, 102) 100%);
-      z-index: 9999;
-      transition: width 500ms ease-out;
-    }
 
-    .logo {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: shimmer 2s ease-out infinite;
-    }
-
-    @keyframes shimmer {
-      0% {
-        opacity: 0.5;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0.5;
-      }
-    }
-
-  </style>
 </head>
 
-<body>
+<body id="root">
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <!-- Add a div with the progress bar and logo -->
-  <div id="root">
-    <div class="loading"></div>
-    <img class="logo" src="%PUBLIC_URL%/favicon-32x32.png" alt="Logo" />
-  </div>
 
-  <!-- Add a script tag to update the progress bar -->
-  <script>
-    // Get the loading indicator element
-    const loadingIndicator = document.querySelector('.loading');
-    // Set the progress to 0
-    let progress = 0;
-    const progressDuration = 2000;
-    function updateProgress() {
-      if (progress < 100) {
-        if (progress >= 70) {
-          progress += 0.01;
-        } else {
-          progress += 1;
-        }
-        loadingIndicator.style.width = `${progress}%`;
-        requestAnimationFrame(updateProgress);
-      }
-    }
-    // Start the update loop when the page loads
-    window.onload = () => {
-      requestAnimationFrame(updateProgress);
-      setTimeout(() => {
-        loadingIndicator.style.width = '100%';
-      }, progressDuration);
-    }
-    updateProgress();
-  </script>
 </body>
 </html>
 
