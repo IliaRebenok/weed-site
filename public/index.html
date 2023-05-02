@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet Weed (พบกัญ) - Your one-stop-shop for premium cannabis products in Pattaya. Discover a wide selection of high-quality flowers, concentrates, edibles, and accessories such as bongs, pipes, vaporizers, rolling papers, and more. Shop with confidence at our trusted cannabis retail store, dedicated to providing exceptional customer service and a knowledgeable team of experts. Visit us today and experience the best of cannabis culture." />
+  <title>Meet Weed (พบกัญ) - Pattaya's Premier Cannabis Retail Store</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+  <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- SEO Meta Fields -->
+  <meta property="og:title" content="Meet Weed (พบกัญ) - Pattaya's Premier Cannabis Retail Store" />
+  <meta property="og:description" content="Meet Weed (พบกัญ) - Your one-stop-shop for premium cannabis products in Pattaya. Discover a wide selection of high-quality flowers, concentrates, edibles, and accessories such as bongs, pipes, vaporizers, rolling papers, and more. Shop with confidence at our trusted cannabis retail store, dedicated to providing exceptional customer service and a knowledgeable team of experts. Visit us today and experience the best of cannabis culture." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meetweed.org/" />
+  <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Meet Weed (พบกัญ)",
+      "url": "https://meetweed.org",
+      "logo": "https://meetweed.org/logo.png",
+      "description": "Meet Weed (พบกัญ) - Your one-stop-shop for premium cannabis products in Pattaya. Discover a wide selection of high-quality flowers, concentrates, edibles, and accessories such as bongs, pipes, vaporizers, rolling papers, and more. Shop with confidence at our trusted cannabis retail store, dedicated to providing exceptional customer service and a knowledgeable team of experts. Visit us today and experience the best of cannabis culture.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "131 100 Thanon Chaiyaphruek, Pattaya City, Bang Lamung District, Chon Buri 20150",
+        "addressLocality": "Pattaya",
+        "addressRegion": "Chonburi",
+        "postalCode": "20150",
+        "addressCountry": "TH"
+      },
+      "openingHours": "Mo-Su 10:00-02:00",
+      "telephone": "+66-091-803-8271"
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #1F2937;
+    }
+    .loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(0deg, rgb(0, 182, 3) 0%, rgba(2, 180, 48, 1) 46%, rgb(2, 183, 102) 100%);
+      z-index: 9999;
+      transition: width 500ms ease-out;
+    }
+
+    .logo {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: shimmer 2s ease-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <!-- Add a div with the progress bar and logo -->
+  <div id="root">
+    <div class="loading"></div>
+    <img class="logo" src="%PUBLIC_URL%/favicon-32x32.png" alt="Logo" />
+  </div>
+
+  <!-- Add a script tag to update the progress bar -->
+  <script>
+    // Get the loading indicator element
+    const loadingIndicator = document.querySelector('.loading');
+    // Set the progress to 0
+    let progress = 0;
+    const progressDuration = 2000;
+    function updateProgress() {
+      if (progress < 100) {
+        if (progress >= 70) {
+          progress += 0.01;
+        } else {
+          progress += 1;
+        }
+        loadingIndicator.style.width = `${progress}%`;
+        requestAnimationFrame(updateProgress);
+      }
+    }
+    // Start the update loop when the page loads
+    window.onload = () => {
+      requestAnimationFrame(updateProgress);
+      setTimeout(() => {
+        loadingIndicator.style.width = '100%';
+      }, progressDuration);
+    }
+    updateProgress();
+  </script>
+</body>
+</html>
+
